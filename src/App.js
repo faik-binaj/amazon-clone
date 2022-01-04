@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./Header";
 import Home from "./Home";
+import Checkout from './Checkout'
 import "./App.css";
-
 
 function App() {
   return (
@@ -11,14 +11,13 @@ function App() {
       <div className={"app"}>
         <Routes>
           <Route
-              path="/checkout"
-              element={
-                  <>
-                      <Header />
-                      <h1>Checkout</h1>
-                  </>
-              }
-
+            path="/checkout"
+            element={
+              <>
+                <Header />
+                <Checkout />
+              </>
+            }
           />
           <Route path="/login" element={<h1>Login</h1>} />
           <Route
