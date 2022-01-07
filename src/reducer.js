@@ -1,30 +1,20 @@
 export const getBasketTotal = (basket) =>
-  basket?.reduce((amount, item) => item.price + amount, 0)
-
+  basket?.reduce((amount, item) => item.price + amount, 0);
 
 export const initialState = {
-  basket: [
-    {
-      id: "12345",
-      title: "PlayStation DualSense Wireless Controller – Midnight Black",
-      price: 70.0,
-      rating: 5,
-      image: "https://m.media-amazon.com/images/I/61O9tWR6WDS._SL1475_.jpg",
-    },
-    {
-      id: "12345",
-      title: "PlayStation DualSense Wireless Controller – Midnight Black",
-      price: 70.0,
-      rating: 5,
-      image: "https://m.media-amazon.com/images/I/61O9tWR6WDS._SL1475_.jpg",
-    },
-  ],
+  basket: [],
   user: null,
 };
 
 const reducer = (state, action) => {
   console.log(action);
   switch (action.type) {
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.user,
+      };
+
     case "ADD_TO_BASKET":
       return {
         ...state,
